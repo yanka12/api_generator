@@ -27,8 +27,15 @@ const profileFactory = {
             jobs: profileFactory.randomJobs(),
             address: profileFactory.randomAddress(),
             country: profileFactory.randomCountry(),
+
+            /* différence entre function() et () => : function permet de redéfinir this comment étant l'objet courant, => ne le fait pas */
+            glue: function() {
+                // un tableau temporaire qui devient une string grâce à join
+                return [`bonjour je m\'appelle ${this.name}, je suis ${this.jobs}, j\'habite ${this.address} en ${this.country}`].join(' ');
+            }
         }
+       
         
     }
+    
 };
-
