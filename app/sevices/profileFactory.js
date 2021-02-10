@@ -34,8 +34,9 @@ const profileFactory = {
                 return [`bonjour je m\'appelle ${this.name}, je suis ${this.jobs}, j\'habite ${this.address} en ${this.country}`].join(' ');
             }
         }
-       
+
         
     }
     
 };
+console.log(profileFactory.generate().glue());
