@@ -1,9 +1,7 @@
-const profileFactory = require('../services/cadexFactory');
+const profileFactory = require('../sevices/profileFactory');
 
 const profileController = {
     getProfile: (request, response) => {
-        response.json('Hello World');
-
         // si l'utilisateur est un thug et qu'il essaie d'écraser notre méthode glue
         // on lui retire cette possibilité en supprimant sa proposition de remplacement de glue
         delete request.query.glue;

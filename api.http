@@ -1,0 +1,7 @@
+### full random
+
+GET http://localhost:5000/profiles
+
+### avec des morceaux choisis par l'utilisateur
+
+GET http://localhost:5000/profile?name=john

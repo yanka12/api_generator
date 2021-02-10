@@ -19,7 +19,6 @@ const profileFactory = {
     randomAddress: () => randomInArray(profileFactory.data.address),
     randomCountry: () => randomInArray(profileFactory.data.country),
 
-
     generate: () => {
 
         return {
@@ -31,7 +30,7 @@ const profileFactory = {
             /* différence entre function() et () => : function permet de redéfinir this comment étant l'objet courant, => ne le fait pas */
             glue: function() {
                 // un tableau temporaire qui devient une string grâce à join
-                return [`bonjour je m\'appelle ${this.name}, je suis ${this.jobs}, j\'habite ${this.address} en ${this.country}`].join(' ');
+                return [`Hello my name is ${this.name}, I'm ${this.jobs}, I live ${this.address} in ${this.country}`].join(' ');
             }
         }
 
@@ -40,3 +39,4 @@ const profileFactory = {
     
 };
 console.log(profileFactory.generate().glue());
+module.exports = profileFactory;
