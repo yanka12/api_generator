@@ -4,4 +4,17 @@ GET http://localhost:5000/profiles
 
 ### avec des morceaux choisis par l'utilisateur
 
-GET http://localhost:5000/profile?name=john
+GET http://localhost:5000/profiles?names=john
+
+### JSON
+
+POST http://localhost:5000/profile
+Content-Type: application/json
+
+{
+    "names": "Jean Castex",
+    "jobs": "web devlopper",
+    "address": "625 Shetland street",
+    "countries": "polka",
+    "bool": true
+}
