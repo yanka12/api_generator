@@ -1,20 +1,19 @@
 ### full random
 
-GET http://localhost:5000/profiles
+GET http://localhost:5000/api/profiles
 
 ### avec des morceaux choisis par l'utilisateur
 
-GET http://localhost:5000/profiles?names=john
+GET http://localhost:5000/api/profiles?name=john
 
 ### JSON
 
-POST http://localhost:5000/profile
+POST http://localhost:5000/api/profile
 Content-Type: application/json
 
 {
-    "names": "Jean Castex",
-    "jobs": "web devlopper",
+    "name": "Jean Castex",
+    "job": "web devlopper",
     "address": "625 Shetland street",
-    "countries": "polka",
-    "bool": true
+    "country": "polka"
 }

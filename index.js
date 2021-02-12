@@ -6,6 +6,15 @@ const app = express();
 
 const port = process.env.PORT || 4040;
 
+const expressSwagger = require('express-swagger-generator')(app);
+
+let options = require('./swagger-config.json');
+options.basedir = __dirname; // __dirname désigne le dossier du point d'entrée
+options.swaggerDefinition.host = `localhost:${port}`;
+
+expressSwagger(options);
+
+
 const router = require('./app/router');
 
 // ce MW informe notre app qu'on communiquera avec elle en JSON
@@ -13,7 +22,7 @@ const router = require('./app/router');
 // en un objet utilisable dans les MW suivants, via request.body
 app.use(express.json());
 
-app.use(router);
+app.use('/api', router);
 
 
 
@@ -24,4 +33,5 @@ app.use(router);
 
 
 
-app.listen(port, () => console.log(`Listening on port=${port}`));
+
+app.listen(port, () => console.log(`Listening on port:${port}`));
